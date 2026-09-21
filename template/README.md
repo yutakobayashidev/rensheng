@@ -5,16 +5,65 @@ This is a private, local-first repository for Personal Context that both you and
 ## Start here
 
 1. Keep this repository private.
-2. Fill in `profile/overview.md` and `profile/preferences.md` only with facts you want Agents to use.
-3. Add accepted Goals to `goals.md`.
-4. Record meaningful context changes in `recent-updates.md`.
-5. Let Agents open deeper Domain files only when a task requires them.
+2. Let an Agent draft `profile/overview.md` and `profile/preferences.md` from information you choose to provide, or write them directly.
+3. Add only Goals you have accepted to `goals.md`.
+4. Record meaningful changes to the compiled context in `recent-updates.md`.
+5. Use the guides below when creating a page. There is no requirement to fill every file or heading.
 
 Read [`philosophy.md`](philosophy.md) for the information boundaries and design principles.
 
 ## Current context
 
 `recent-updates.md` and `goals.md` together serve as the practical current-context entrypoint. They do not replace evidence in profile, Domain, Capture, Brief, or source files.
+
+`recent-updates.md` records which pages changed and why. Daily events, measurements, and journal entries remain in their source applications or stores; do not copy them all into this changelog.
+
+## Files and guides
+
+| Location | What belongs here | Guide |
+| --- | --- | --- |
+| `profile/` | Stable background, communication preferences, and working conditions | [Profile](profile/README.md) |
+| `people/` | A person's relationship with you and its current context | [People](people/README.md) |
+| `health/` | Current care, prescriptions, and relevant medical history | [Health](health/README.md) |
+| `money/` | Accounts, income, subscriptions, other recurring payments, and obligations | [Money](money/README.md) |
+| `career/` | Your roles, commitments, and work opportunities | [Career](career/README.md) |
+| `education/` | Enrollment, applications, and learning progress | [Education](education/README.md) |
+| `home/` | Housing, utilities, maintenance, and practical procedures | [Home](home/README.md) |
+| `routines/` | Procedures you use in daily life | [Routines](routines/README.md) |
+| `recipes/` | Personal cooking instructions | [Recipes](recipes/README.md) |
+| `captures/` | Items deliberately saved for later retrieval | [Captures](captures/README.md) |
+| `briefs/` | Outputs assembled for a particular time and purpose | [Briefs](briefs/README.md) |
+| `.agents/skills/` | Reusable Agent procedures, without personal data | Individual `SKILL.md` files |
+
+Each folder's `README.md` explains its purpose, file names, and example contents. An `overview.md`, where useful, describes your current situation and points to details. Individual pages are created only when there is information to put in them. An Agent can create or split pages as needed; you do not need to maintain an empty hierarchy.
+
+All examples in these guides are fictional and appear inside code blocks. They are documentation, not facts about the repository owner. Do not copy them into live pages as onboarding data. Suggested headings are optional; no universal `template.md`, frontmatter, tags, or UUID scheme is required.
+
+Common evidence and update rules live in [AGENTS.md](AGENTS.md).
+
+## Goals and updates
+
+An accepted Goal can include the user's wording, acceptance date, desired outcome, and a link to supporting context. Include a deadline only when one is known. The existing time horizons are optional groupings, not a requirement to set a new Goal every day.
+
+Fictional `goals.md` entry:
+
+```markdown
+## This month
+
+- Set up a usable workspace at home.
+  - Accepted: 2026-01-15, in the user's own note.
+  - Done when: the desk and required equipment are ready to use.
+  - Context: home/housing.md.
+```
+
+Fictional `recent-updates.md` entry, newest date first:
+
+```markdown
+## 2026-01-15
+
+- people/alice.md: recorded the agreed demo responsibilities and review still pending; linked the source message.
+- money/subscriptions.md: reflected Example Service's confirmed plan change.
+```
 
 ## OpenBrief
 

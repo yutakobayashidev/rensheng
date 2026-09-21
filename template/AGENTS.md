@@ -18,3 +18,16 @@ For questions about the user's current situation:
 - Do not copy secrets, raw message archives, financial statements, or medical originals into generated summaries.
 - Keep Knowledge about the world in the separate Garden, not in Personal Context.
 - Prefer small, focused updates. Preserve user-authored statements unless the user requests rewriting.
+
+## Creating and updating pages
+
+- Read the relevant folder's `README.md` before creating or restructuring its pages. README examples, instructional comments, and placeholders are not evidence about the user; never import fictional examples as personal facts.
+- Create a page only when there is information to record. Use the suggested file names and headings when useful; omit empty sections and add subdirectories only when needed. Do not make the user complete a template or perform routine filing.
+- Keep each detailed fact in one primary location and link to it from related pages. An `overview.md` is a short current summary and entrypoint, not a copy of every page.
+- State when a current condition was verified. Separate event dates from verification dates; a file's edit date does not establish that its contents are still current.
+- Keep source links or references near material claims and state changes. Reuse source IDs where available. Distinguish the user's statements, external evidence, and Agent interpretations. Do not mark an unfetched source as verified.
+- Missing information means unknown, not absent. Preserve uncertainty and conflicting evidence instead of silently choosing a value.
+- Keep `Recent` or `Changes` sections to meaningful developments. Remove resolved items from current open loops and retain a short outcome when useful.
+- Open loops explain what remains unresolved in that context. Link to tasks in an execution app when one is used; do not maintain a second task completion state here.
+- Record meaningful compilation changes in `recent-updates.md`, newest first, with the affected paths and a short explanation. Do not turn it into a raw life-event log.
+- Preserve user-authored wording separately from generated summaries when regenerating views. Originals remain in their source systems or existing stores; this template does not introduce a raw-data store or a new Timeline.

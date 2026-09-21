@@ -8,7 +8,7 @@ Rensheng is a local-first foundation that keeps your private life context under 
 
 - `philosophy.md` — Rensheng's boundaries and design principles
 - `profile/`, `goals.md`, and `recent-updates.md` — the minimal Personal Context structure
-- `people/`, `health/`, `money/`, and other directories — an empty Domain structure
+- `people/`, `health/`, `money/`, and other directories — Domain guides with file conventions and fictional examples; create personal pages only when there is information to record
 - `.agents/skills/` — reusable Skills for Agents that work with Rensheng
 
 Copy it into a new private repository:
