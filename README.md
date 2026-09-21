@@ -1,24 +1,24 @@
 # Rensheng
 
-Renshengは、privateな生活コンテキストを本人の手元に保存し、人間とAIがあとから辿れる小さなMarkdownへ継続的にコンパイルするlocal-firstな基盤です。
+Rensheng is a local-first foundation that keeps your private life context under your control and continuously compiles it into small Markdown files that both you and AI can retrace later.
 
 ## Personal repository template
 
-[`template/`](template/) は、個人用Renshengリポジトリの匿名スターターです。実データは含まず、次のものだけを提供します。
+[`template/`](template/) is an anonymous starter for a private Rensheng repository. It contains no personal data and provides only:
 
-- `philosophy.md` — Renshengの境界と設計原則
-- `profile/`、`goals.md`、`recent-updates.md` — Personal Contextの最小構成
-- `people/`、`health/`、`money/`など — 空のDomain構造
-- `.agents/skills/` — Renshengを読むAgent向けの汎用Skill
+- `philosophy.md` — Rensheng's boundaries and design principles
+- `profile/`, `goals.md`, and `recent-updates.md` — the minimal Personal Context structure
+- `people/`, `health/`, `money/`, and other directories — an empty Domain structure
+- `.agents/skills/` — reusable Skills for Agents that work with Rensheng
 
-新しいprivateリポジトリへ展開します。
+Copy it into a new private repository:
 
 ```console
 mkdir -p /path/to/private-rensheng
 cp -a template/. /path/to/private-rensheng/
 ```
 
-生成先はprivateにし、プロフィール、健康、金銭、対人関係などの個人データをこのpublicリポジトリへコミットしないでください。
+Keep the destination private. Do not commit personal data such as profile, health, financial, or relationship information to this public repository.
 
 ## Components
 
