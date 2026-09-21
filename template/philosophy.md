@@ -627,6 +627,10 @@ Rensheng does not turn everything into Wiki pages in advance.
 
 Retrieval happens by reading and searching the repository directly with the file tools an Agent already has. Rensheng does not implement a dedicated CLI or MCP server.
 
+`index.md` provides links and one-line descriptions of existing personal pages, grouped by life domain. An Agent maintains it after relevant edits. It locates context; the linked pages retain facts and evidence. `recent-updates.md` continues to describe meaningful compilation changes.
+
+The optional `scripts/index.py` maintenance helper compares page and index-entry hashes and records explicit navigation reviews in `index-state.json`. It has no retrieval service, source connector, inference, or background process. A changed hash requests review; an unchanged hash does not establish that external facts are current. See [Index maintenance](scripts/README.md) for the workflow and timestamp conventions.
+
 The basic path is:
 
 ```text

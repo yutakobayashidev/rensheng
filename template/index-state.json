@@ -1,0 +1,40 @@
+{
+  "pages": {
+    "goals.md": {
+      "entry_sha256": "e50005931e2d14db6225d2396080a25541e8fb2aed60f8ff4ecae0cf3685e9a6",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "9b5e1e79cd6d8e20ea255e324f27dffda2a63c733437c9f8d0423450e2f7ec6c"
+    },
+    "profile/background.md": {
+      "entry_sha256": "294b7537427c26ea0c14c3f4fecacec174160223edc9fd8a0bbf7d14207dab57",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "e20c6b99ea1a0e0ea13014487618e143d00f996711a66de41aed93410362b544"
+    },
+    "profile/communication.md": {
+      "entry_sha256": "c3c1bf3827bc28d70702f794e2451d38258ab760de70beb35253723aa840f4d3",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "d2ddea7226dc3ee79fdd217ce9c3390023e27d91f6c8170bfc1460007131418a"
+    },
+    "profile/overview.md": {
+      "entry_sha256": "19e18861ef55e1e2797276828d6c9a0dde3c64673221863bccb7a149ab7b0e58",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "9b2c2682c21faf6be603c549d33b061faeac39b6eabf4b18bfb04285be34c4f0"
+    },
+    "profile/preferences.md": {
+      "entry_sha256": "936efcf6f699fcba5f66e635b01b4f431d0e02e87202705a2d817a980db558d2",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "9a6b9313c8e21cfe5daa9587734f44f13a96a08244f511e47abbea269334c542"
+    },
+    "profile/work-patterns.md": {
+      "entry_sha256": "f1f63a69b15a37ddedadb2a5980c96f0c2342823987139a1e92f2282e8dff539",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "25c86e8b8325089301f504ea7151d4daa6e5102d4cb8be3ce299a52dfaea34dd"
+    },
+    "recent-updates.md": {
+      "entry_sha256": "205c84ccb62b2254bbfbe16beabd0e7fa6065c425c2566ee92f9913b6ca26294",
+      "indexed_at": "2026-09-21T17:04:15+00:00",
+      "sha256": "48dd26a3bc2eb58eafe8c2df297d9aa4f2da4ca162146a914d08a459b9c814b1"
+    }
+  },
+  "version": 1
+}

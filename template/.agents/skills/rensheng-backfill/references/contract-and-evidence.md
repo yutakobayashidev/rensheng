@@ -2,6 +2,8 @@
 
 Baseline inspected at https://github.com/yutakobayashidev/rensheng/tree/f816c92a7326e76a3d3eddc874fdcca6f74cfa5f/template . Prefer current instance instructions over this snapshot; it contains no user facts.
 
+Instances that have adopted index maintenance also use `index.md` for navigation and `index-state.json` for reviewed page/entry hashes. Follow the current instance's AGENTS.md and scripts/README.md; these files do not broaden the personal-content scope of this backfill or replace its source evidence.
+
 | Path | Baseline meaning / headings |
 | --- | --- |
 | profile/overview.md | Profile / Overview; short stable-context index |

@@ -18,10 +18,13 @@ Read [`philosophy.md`](philosophy.md) for the information boundaries and design 
 
 `recent-updates.md` records which pages changed and why. Daily events, measurements, and journal entries remain in their source applications or stores; do not copy them all into this changelog.
 
+Use [`index.md`](index.md) to find existing pages by their purpose. It complements the current-context entrypoint; its descriptions do not replace the pages or their evidence. Agents maintain the index alongside authorized page edits. [`index-state.json`](index-state.json) records the page and description versions reviewed together.
+
 ## Files and guides
 
 | Location | What belongs here | Guide |
 | --- | --- | --- |
+| `index.md`, `index-state.json` | Navigation descriptions and machine-written review hashes | [Index maintenance](scripts/README.md) |
 | `profile/` | Stable background, communication preferences, and working conditions | [Profile](profile/README.md) |
 | `people/` | A person's relationship with you and its current context | [People](people/README.md) |
 | `health/` | Current care, prescriptions, and relevant medical history | [Health](health/README.md) |
@@ -40,6 +43,18 @@ Each folder's `README.md` explains its purpose, file names, and example contents
 All examples in these guides are fictional and appear inside code blocks. They are documentation, not facts about the repository owner. Do not copy them into live pages as onboarding data. Suggested headings are optional; no universal `template.md`, frontmatter, tags, or UUID scheme is required.
 
 Common evidence and update rules live in [AGENTS.md](AGENTS.md).
+
+## Index freshness
+
+With Python 3.10+, check navigation without modifying any files:
+
+```console
+python3 scripts/index.py check
+```
+
+The helper detects unlisted or missing pages and changed page/description hashes. It never writes personal pages, infers facts, or generates descriptions. An Agent reviews the affected entries before recording their hashes. See [Index maintenance](scripts/README.md) for the complete workflow and the separate meanings of `updated_at`, `verified_at`, and `indexed_at`.
+
+The initial index and receipts describe empty starter pages only. Existing private instances can adopt the index without filling missing profile facts or rewriting every page. The helper is optional maintenance tooling; ordinary file reading and search remain sufficient to use Rensheng.
 
 ## Goals and updates
 

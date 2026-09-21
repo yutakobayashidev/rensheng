@@ -11,6 +11,7 @@ Read [Rensheng in Context](COMPARISON.md) for comparison matrices with Karpathy'
 - `philosophy.md` — Rensheng's boundaries and design principles
 - `profile/`, `goals.md`, and `recent-updates.md` — the minimal Personal Context structure
 - `people/`, `health/`, `money/`, and other directories — Domain guides with file conventions and fictional examples; create personal pages only when there is information to record
+- `index.md`, `index-state.json`, and [`scripts/index.py`](template/scripts/README.md) — navigation and an optional Python helper for detecting changed pages or descriptions; timestamp conventions distinguish editing, evidence checks, and index reviews
 - `.agents/skills/` — reusable Skills for Agents that work with Rensheng
 
 Copy it into a new private repository:

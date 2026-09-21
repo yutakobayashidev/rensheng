@@ -123,6 +123,7 @@
               flutter
               nodejs_24
               pnpm_10
+              python3
               openssl
               pkg-config
               cairo

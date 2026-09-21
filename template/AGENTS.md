@@ -7,7 +7,7 @@ This repository is a private Rensheng instance. Treat every file as personal dat
 For questions about the user's current situation:
 
 1. Read `recent-updates.md` and `goals.md`.
-2. Read `profile/overview.md` and the relevant profile or Domain files.
+2. Use `index.md`, when present, to locate relevant pages; read `profile/overview.md` and the relevant profile or Domain files. Index descriptions are navigation, not evidence of current facts.
 3. Read `captures/` or `briefs/` only when the question requires them.
 4. Return to external source evidence only when the compiled Markdown is insufficient.
 
@@ -31,3 +31,11 @@ For questions about the user's current situation:
 - Open loops explain what remains unresolved in that context. Link to tasks in an execution app when one is used; do not maintain a second task completion state here.
 - Record meaningful compilation changes in `recent-updates.md`, newest first, with the affected paths and a short explanation. Do not turn it into a raw life-event log.
 - Preserve user-authored wording separately from generated summaries when regenerating views. Originals remain in their source systems or existing stores; this template does not introduce a raw-data store or a new Timeline.
+
+## Index and timestamps
+
+- Maintain `index.md` with links to existing personal pages and one-line descriptions, grouped by Domain. Keep details in their primary pages. Do not list every guide, skill, or raw source.
+- Follow [scripts/README.md](scripts/README.md) for timestamp meanings and the index helper. Record `updated_at` when editing a personal page; preserve legacy formats and leave unchanged pages alone. Keep `verified_at` or `Verified as of:` beside the facts actually checked, with evidence. Do not invent dates for starter placeholders.
+- After finishing authorized page and changelog edits, read the affected pages and review their index entries. Run `python3 scripts/index.py check`; record only the reviewed page/entry versions using the returned hashes. `index-state.json` contains navigation receipts, not verification of external facts. Never refresh hashes blindly to clear a warning.
+- Repeated checks are read-only; unchanged receipts keep their timestamps. Index-only maintenance does not create a `recent-updates.md` entry. Missing or stale receipts do not prevent reading the original pages.
+- If the helper cannot run, maintain the index as authorized and report hash checking as pending. Never fabricate hashes. Keep partial or unrelated indexing gaps visible rather than expanding a bounded task automatically.

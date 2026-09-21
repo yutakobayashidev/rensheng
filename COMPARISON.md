@@ -2,7 +2,7 @@
 
 Rensheng specifies how private life context should be preserved, compiled, and read across tools and Agents. Its distinctive emphasis is the combination of personal continuity, explicit information boundaries, source-backed current state, and the user's authority over their own goals and identity. See the [design philosophy](template/philosophy.md) and [Agent guidelines](template/AGENTS.md).
 
-Source review: **2026-09-21 (UTC)**. Rensheng baseline: [77f84a3](https://github.com/yutakobayashidev/rensheng/tree/77f84a38a3572246977a261b7dad6d3fce9ca82d).
+Source review: **2026-09-21 (UTC)**. Rensheng implementation references describe this document's repository revision.
 
 The tables compare published designs and documented capabilities. Rensheng's intended behavior is distinguished from its current implementation below. Relationships and architectural positioning are this document's interpretation of the linked sources; they are not benchmark results or claims of historical priority.
 
@@ -44,6 +44,8 @@ Karpathy explicitly includes personal goals, health, and psychology. The gist al
 Our interpretation is that Rensheng specializes this approach with a defined contract for private life context: what belongs in each view, which statements remain the user's authority, what needs source evidence, and what should stay outside the repository.
 
 The distinction concerns what the structure maintains: accumulated understanding or the person's continuing situation. Both approaches can use domain files. See the [open problems](#open-problems-from-records-and-knowledge-to-a-life-model) below for the responsibilities a life-specific workflow must define.
+
+Rensheng adopts the maintained navigation index alongside its existing compilation changelog. In LLM Wiki, dates and frontmatter are optional; the original proposal does not prescribe a content-hash workflow. Rensheng adds explicit edit/verification/index-review timestamp meanings and hash receipts for matching index descriptions to reviewed page versions. These checks detect changed bytes, not stale external facts or incorrect interpretations. [LLM Wiki][llm-wiki], [Index maintenance](template/scripts/README.md)
 
 ### Obsidian: a compatible interface
 
@@ -151,6 +153,7 @@ This distinction matters when comparing Rensheng with established applications.
 | Private repository layout | Template, Domain guides, profile placeholders, and Agent rules are present. [Template](template/README.md) | A completed personal database ships with the template |
 | Agent workflows | Reusable Skills exist, including initial backfill. [Backfill](template/.agents/skills/rensheng-backfill/SKILL.md) | Every connector is available, or updates run continuously by themselves |
 | Reading and search | The design uses existing Agent file tools. [Philosophy](template/philosophy.md#15-file-based-retrieval-model) | A dedicated Rensheng CLI or MCP server is required |
+| Navigation maintenance | A page index and optional Python helper track reviewed page/entry hashes. [Guide](template/scripts/README.md) | A matching hash proves real-world freshness or semantic correctness |
 | Original-data storage | Originals remain in existing systems; a local raw store is planned. [Philosophy](template/philosophy.md#12-internal-storage-planned) | The planned shared raw store and complete ingestion pipeline are implemented |
 | Execution and recording | The repository contains a separately documented OpenBrief implementation. [OpenBrief](docs/openbrief.md) | All planned life-recording, PWA, and export workflows are implemented by the template |
 | Effort and reliability | Lower upkeep and better continuity are design goals | This comparison proves reduced effort, automatic correctness, or improved outcomes |
@@ -166,7 +169,7 @@ The design is useful only if it reduces repeated explanation and reconstruction 
 - Microsoft Research, [MyLifeBits project][mylifebits], established November 2, 2001.
 - Jim Gemmell, Roger Lueder, and Gordon Bell, [The MyLifeBits Lifetime Store][mylifebits-paper], ETP 2003.
 - Jim Gemmell, Gordon Bell, and Roger Lueder, [MyLifeBits: A Personal Database for Everything][mylifebits-report], MSR-TR-2006-23, February 20, 2006. Expanded technical report of the January 2006 CACM article; see the organization discussion and the appendix on health and agents.
-- Rensheng: [philosophy](template/philosophy.md), [Agent guidelines](template/AGENTS.md), and [template documentation](template/README.md), at the revision identified above.
+- Rensheng: [philosophy](template/philosophy.md), [Agent guidelines](template/AGENTS.md), and [template documentation](template/README.md), at this document's repository revision.
 
 [llm-wiki]: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 [obsidian-storage]: https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data

@@ -13,7 +13,7 @@ Build a useful first context from existing evidence with minimal manual input. K
 - Use the supplied instance path or verified private destination. If unknown, ask one focused destination question; offer a private draft if direct access is unavailable. Never guess a repository or publish personal data in a public repository, PR, issue or shared folder.
 - Read applicable AGENTS.md, README.md and philosophy.md. Read recent-updates.md and goals.md first, then profile/overview.md, other profile files and relevant existing people pages. Follow nested instructions before edits.
 - Preserve the current instance's schema, language and authored prose. Read references/contract-and-evidence.md for the baseline and source routing. If the current template is needed, fetch https://github.com/yutakobayashidev/rensheng/tree/main/template using available GitHub read tools and record the inspected revision.
-- Limit writes to profile/*.md, people/*.md, goals.md and recent-updates.md. Do not introduce timeline/, inbox/, records/, interest folders, databases or raw stores. Ask before expanding into other Domains.
+- Limit personal-content writes to profile/*.md, people/*.md, goals.md and recent-updates.md. When the instance uses an index, also maintain index.md and index-state.json for those in-scope changes under its indexing rules. Do not introduce timeline/, inbox/, records/, interest folders, databases or raw stores. Ask before expanding personal content into other Domains.
 - Record run date and timezone. Resolve relative dates against source timestamps, not the run date; ask only when timezone ambiguity materially affects an outcome.
 
 ## 2. Discover and scope sources
@@ -66,6 +66,11 @@ Maintain an ephemeral ledger: claim, subject, source locator, author, effective/
 - Write a reverse-chronological changelog of what this backfill actually learned and changed in Rensheng, not a retrospective life-event feed or standalone now.md.
 - Date entries by compilation time; retain historical event dates in the linked target pages. Summarize material file changes, coverage gaps and pending confirmations concisely.
 - Log successful changes only. A no-op rerun must not produce a duplicate entry or pretend failed writes succeeded.
+
+### Navigation and timestamps
+
+- Follow the instance's AGENTS.md and scripts/README.md when present. Record actual edit times on changed personal pages; do not advance verification dates without checking the relevant evidence. Leave unchanged pages and empty placeholders alone.
+- After finishing personal-content and changelog edits, review the affected index descriptions. Use the instance's helper to check hashes and record only the page/entry versions actually reviewed. Do not fabricate hashes or mark unrelated pages reviewed. If the helper is unavailable, update navigation as authorized and report hash checking as pending. Index-only changes do not create another changelog entry.
 
 ## 5. Apply and verify
 
