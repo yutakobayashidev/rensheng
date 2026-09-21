@@ -26,9 +26,6 @@ Tools that can provide source data for captures:
 
 | Tool | Interface | Capture source |
 | --- | --- | --- |
+| [OpenBrief](docs/openbrief.md) | Daemon, CLI, and desktop app | Foreground app metadata and observations |
 | [Bird](https://git.yutakobayashi.com/yuta/bird) | CLI | X/Twitter |
 | [twitter-api-safe](https://github.com/fa0311/twitter_api_safe_relay) | API relay | X/Twitter |
-
-## Components
-
-- [OpenBrief](docs/openbrief.md)
