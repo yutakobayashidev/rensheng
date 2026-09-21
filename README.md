@@ -2,6 +2,8 @@
 
 Rensheng is a local-first foundation that keeps your private life context under your control and continuously compiles it into small Markdown files that both you and AI can retrace later.
 
+Read [Rensheng in Context](COMPARISON.md) for comparison matrices with Karpathy's LLM Wiki, Obsidian, and Notion, historical context from Memex and MyLifeBits, and the distinction between the current implementation and intended behavior.
+
 ## Personal repository template
 
 [`template/`](template/) is an anonymous starter for a private Rensheng repository. It contains no personal data and provides only:
