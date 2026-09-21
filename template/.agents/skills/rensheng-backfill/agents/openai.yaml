@@ -1,0 +1,13 @@
+interface:
+  display_name: Rensheng Backfill
+  short_description: 接続済みサービスからRenshengの初期コンテキストを出典付きで構築
+  default_prompt: $rensheng-backfill を使って、接続済みサービスからRenshengのprofile、people、goals、recent-updatesを初回backfillしてください。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
