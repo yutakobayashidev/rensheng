@@ -2,6 +2,12 @@
 
 This repository is a private Rensheng instance. Treat every file as personal data unless the user explicitly says otherwise.
 
+## Output language
+
+- Expected output language: Japanese (`ja`).
+- Respond to the user and write new or substantially revised Personal Context in Japanese unless the user explicitly requests another language.
+- Preserve existing wording, quotations, proper nouns, source titles, and technical terms when translation would reduce fidelity. Do not translate unchanged pages only for consistency.
+
 ## Reading order
 
 For questions about the user's current situation:
