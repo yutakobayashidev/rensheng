@@ -1,4 +1,28 @@
-# OpenBrief
+# Rensheng
+
+Renshengは、privateな生活コンテキストを本人の手元に保存し、人間とAIがあとから辿れる小さなMarkdownへ継続的にコンパイルするlocal-firstな基盤です。
+
+このリポジトリには、Renshengの一部として既存の**OpenBrief**実装をそのまま収録しています。OpenBriefは、注意の移動、Observation、有限Brief、Return Anchorを扱うAttention Handoffコンポーネントです。
+
+## Personal repository template
+
+[`template/`](template/) は、個人用Renshengリポジトリの匿名スターターです。実データは含まず、次のものだけを提供します。
+
+- `philosophy.md` — Renshengの境界と設計原則
+- `profile/`、`goals.md`、`recent-updates.md` — Personal Contextの最小構成
+- `people/`、`health/`、`money/`など — 空のDomain構造
+- `.agents/skills/` — Renshengを読むAgent向けの汎用Skill
+
+新しいprivateリポジトリへ展開します。
+
+```console
+mkdir -p /path/to/private-rensheng
+cp -a template/. /path/to/private-rensheng/
+```
+
+生成先はprivateにし、プロフィール、健康、金銭、対人関係などの個人データをこのpublicリポジトリへコミットしないでください。
+
+## OpenBrief
 
 「何を見ていたか」だけで終わらず、いま守ること、有限に探索すること、元の作業へ戻る糸を残すlocal-firstなAttention Handoffです。認知科学・HCI研究、既存製品の解析、OSS調査も同じリポジトリに残しています。
 
@@ -135,7 +159,7 @@ Home Managerではconfigとsystemd user serviceを一緒に宣言する。
 
 ```nix
 {
-  inputs.openbrief.url = "github:yutakobayashidev/open-brief";
+  inputs.openbrief.url = "github:yutakobayashidev/rensheng";
 
   outputs =
     {

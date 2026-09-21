@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily Trend Brief"
+  short_description: "Collect public tech trends and personalize a daily Rensheng Brief"
+  default_prompt: "Use $trend-daily to collect today's technology trends and save an interest-aware daily Brief."
