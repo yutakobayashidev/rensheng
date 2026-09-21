@@ -20,6 +20,15 @@ cp -a template/. /path/to/private-rensheng/
 
 Keep the destination private. Do not commit personal data such as profile, health, financial, or relationship information to this public repository.
 
+## Building Blocks
+
+Tools that can provide source data for captures:
+
+| Tool | Interface | Capture source |
+| --- | --- | --- |
+| [Bird](https://git.yutakobayashi.com/yuta/bird) | CLI | X/Twitter |
+| [twitter-api-safe](https://github.com/fa0311/twitter_api_safe_relay) | API relay | X/Twitter |
+
 ## Components
 
 - [OpenBrief](docs/openbrief.md)
