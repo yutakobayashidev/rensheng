@@ -29,3 +29,5 @@ Tools that can provide source data for captures:
 | [OpenBrief](docs/openbrief.md) | Daemon, CLI, and desktop app | Foreground app metadata and observations |
 | [Bird](https://git.yutakobayashi.com/yuta/bird) | CLI | X/Twitter |
 | [twitter-api-safe](https://github.com/fa0311/twitter_api_safe_relay) | API relay | X/Twitter |
+| [Grafana](https://grafana.com/) | Dashboards and API | Vitals and environment |
+| [Beeper](https://www.beeper.com/) | Messaging app | Messages |
