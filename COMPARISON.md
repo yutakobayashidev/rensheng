@@ -2,7 +2,7 @@
 
 Rensheng specifies how private life context should be preserved, compiled, and read across tools and Agents. Its distinctive emphasis is the combination of personal continuity, explicit information boundaries, source-backed current state, and the user's authority over their own goals and identity. See the [design philosophy](template/philosophy.md) and [Agent guidelines](template/AGENTS.md).
 
-Source review: **2026-09-21 (UTC)**. Rensheng baseline: [755a1b9](https://github.com/yutakobayashidev/rensheng/tree/755a1b9cd753135254d667d19089eafc9a0fdd34).
+Source review: **2026-09-21 (UTC)**. Rensheng baseline: [77f84a3](https://github.com/yutakobayashidev/rensheng/tree/77f84a38a3572246977a261b7dad6d3fce9ca82d).
 
 The tables compare published designs and documented capabilities. Rensheng's intended behavior is distinguished from its current implementation below. Relationships and architectural positioning are this document's interpretation of the linked sources; they are not benchmark results or claims of historical priority.
 
@@ -42,6 +42,8 @@ Rensheng rules in this matrix come from [philosophy.md](template/philosophy.md) 
 Karpathy explicitly includes personal goals, health, and psychology. The gist also describes using Obsidian alongside the Agent. It is a pattern to adapt, rather than a single packaged implementation. [Source][llm-wiki]
 
 Our interpretation is that Rensheng specializes this approach with a defined contract for private life context: what belongs in each view, which statements remain the user's authority, what needs source evidence, and what should stay outside the repository.
+
+The distinction concerns what the structure maintains: accumulated understanding or the person's continuing situation. Both approaches can use domain files. See the [open problems](#open-problems-from-records-and-knowledge-to-a-life-model) below for the responsibilities a life-specific workflow must define.
 
 ### Obsidian: a compatible interface
 
@@ -93,6 +95,53 @@ This is a selective comparison, not a complete PKM history or a linear successio
 
 MyLifeBits already addressed retrieval and organization, not merely storage. Its 2003 paper describes saved queries replacing some manual collections, related-item navigation, and suggested links. Reducing filing effort and organizing by query therefore have clear precedents. Rensheng's contribution should be evaluated as a particular combination of responsibilities and conventions, not as the invention of personal digital memory. [Paper][mylifebits-paper]
 
+## Open problems: from records and knowledge to a life model
+
+The following separates documented research observations from Rensheng's design hypotheses. The cited work does not establish a single cause of MyLifeBits' adoption outcomes, or justify treating the research project itself as a failure.
+
+### MyLifeBits: the remaining cost of organization
+
+The expanded 2006 report describes a remaining burden even when classifications and labels are available: users still become a "filing clerk" who annotates their material. The authors call for more automatic organization and capture that does not interrupt everyday life. [Report, organization discussion, PDF p. 9][mylifebits-report]
+
+The same report discusses a Health Memex and future agents that act on a person's state. These were recognized research directions, not evidence of a completed life-management system. [Report, appendix on health and agents, PDF pp. 16–17][mylifebits-report]
+
+The historical lesson we draw is the continuing cost of turning retained records into usable personal state. The absence of modern LLMs alone is not an established explanation: the earlier system already automated parts of retrieval and organization, as described above.
+
+### LLM Wiki: a life-specific contract still has to be defined
+
+LLM Wiki's lint workflow already addresses contradictions and stale claims, and its schema can be adapted. [Source][llm-wiki]
+
+Our interpretation is that a knowledge-centered workflow needs additional decisions when used as a life model. These are responsibilities for its chosen schema, not proof that the pattern cannot support them:
+
+| Challenge when applying a wiki to personal life | Rensheng's specified response | What still needs validation |
+| --- | --- | --- |
+| A correct historical statement may no longer describe the present | Keep verified current state, relevant changes, and evidence distinguishable | Superseded claims stop appearing as current; missing evidence stays unknown |
+| A plausible interpretation can be mistaken for the person's intention | Separate observed behavior, Agent suggestions, and accepted Goals | User corrections and explicit statements survive later compilation |
+| More topic pages can increase the amount to navigate or review | Maintain focused life-domain views; retrieve wider history only when needed | Relevant context remains easy to find as sources grow |
+| Automated editing can move work from filing into checking and repair | Use small, source-linked updates and preserve user-authored wording | Total user effort decreases, including review and correction |
+
+These responses follow the [Agent guidelines](template/AGENTS.md); their effectiveness is a design goal, not a demonstrated advantage over LLM Wiki.
+
+### Design hypothesis: different information needs different update rules
+
+Our hypothesis is that a personal system becomes harder to maintain when world knowledge, evidence of events, and the person's current situation are treated as interchangeable. Linking them is useful. Their meaning, authority, and update rules need to remain distinct. This is a risk to test in Rensheng as well, not a documented cause of MyLifeBits' outcomes.
+
+| Information role | Fictional subscription example | Update responsibility |
+| --- | --- | --- |
+| Knowledge about the world | How a service works and how its plans compare | Revise understanding when sources change; keep it in the separate Garden |
+| Evidence of an event | An invoice or cancellation confirmation | Retain the original and its date; reference it from the compiled view |
+| Personal state | Which plan is active, whether renewal is cancelled, and when access ends | Update from relevant evidence; retain verification dates and unresolved uncertainty |
+
+An old invoice does not establish an active subscription today. Reading a service comparison does not establish a purchase or an intention to subscribe. The [money guide](template/money/README.md) applies these distinctions to the current personal view.
+
+`people/`, `health/`, `money/`, and the other life domains provide stable entrypoints for recurring questions about the person. Within them, the useful distinctions include relationships, conditions, obligations, intentions, and procedures. The folders alone are not a complete life model, and Rensheng does not require a universal ontology. For example, a [person page](template/people/README.md) maintains the relationship and unresolved exchanges; it need not grow into an encyclopedia entry about that person.
+
+### What LLMs change, and what remains Rensheng's responsibility
+
+The opportunity is to delegate interpretation and filing to external Agents while maintaining an explicit structure. Rensheng's core does not perform inference. Source-backed views and conventions let different Agents maintain and read the same personal model.
+
+Automation must preserve the distinction between a recorded event, an interpretation, and a user decision. Evaluate the design by the effort needed to recover context, correct mistakes, and keep current state reliable. A larger archive or a richer wiki alone does not demonstrate that everyday life has become easier.
+
 ## Current implementation and intended behavior
 
 This distinction matters when comparing Rensheng with established applications.
@@ -116,6 +165,7 @@ The design is useful only if it reduces repeated explanation and reconstruction 
 - Vannevar Bush, [As We May Think][memex], *The Atlantic*, July 1945.
 - Microsoft Research, [MyLifeBits project][mylifebits], established November 2, 2001.
 - Jim Gemmell, Roger Lueder, and Gordon Bell, [The MyLifeBits Lifetime Store][mylifebits-paper], ETP 2003.
+- Jim Gemmell, Gordon Bell, and Roger Lueder, [MyLifeBits: A Personal Database for Everything][mylifebits-report], MSR-TR-2006-23, February 20, 2006. Expanded technical report of the January 2006 CACM article; see the organization discussion and the appendix on health and agents.
 - Rensheng: [philosophy](template/philosophy.md), [Agent guidelines](template/AGENTS.md), and [template documentation](template/README.md), at the revision identified above.
 
 [llm-wiki]: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
@@ -129,3 +179,4 @@ The design is useful only if it reduces repeated explanation and reconstruction 
 [memex]: https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/
 [mylifebits]: https://www.microsoft.com/en-us/research/project/mylifebits/
 [mylifebits-paper]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/etp2003.pdf
+[mylifebits-report]: https://www.hcitang.org/uploads/Teaching/2006-gemmell-mylifebits.pdf
