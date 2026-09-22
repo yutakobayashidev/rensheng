@@ -24,6 +24,19 @@ These principles guide the repository template and Agent workflows. Rensheng its
 
 Read [Rensheng in Context](COMPARISON.md) for comparison matrices with Karpathy's LLM Wiki, Obsidian, and Notion, historical context from Memex and MyLifeBits, and the distinction between the current implementation and intended behavior.
 
+## Set up with an Agent
+
+Paste this into ChatGPT, Hermes Agent, Codex, or another Agent:
+
+```text
+Set up my private Rensheng repository by following this guide:
+https://raw.githubusercontent.com/yutakobayashidev/rensheng/main/docs/setup.md
+```
+
+The Agent will help you connect sources such as Gmail, Calendar, and Beeper, confirm the output language in your private `AGENTS.md`, and run `rensheng-backfill`. Existing connections and settings are reused. You only need to supply missing choices and complete any required sign-in or permission steps.
+
+Read the [setup guide](docs/setup.md) for the full workflow. Available integrations and file-writing capabilities depend on your Agent environment; setup can start with a subset of sources or produce a private draft when direct writes are unavailable.
+
 ## Personal repository template
 
 [`template/`](template/) is an anonymous starter for a private Rensheng repository. It contains no personal data and provides only:

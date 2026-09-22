@@ -4,11 +4,13 @@ This is a private, local-first repository for Personal Context that both you and
 
 ## Start here
 
-1. Keep this repository private.
-2. Let an Agent draft `profile/overview.md` and `profile/preferences.md` from information you choose to provide, or write them directly.
-3. Add only Goals you have accepted to `goals.md`.
-4. Record meaningful changes to the compiled context in `recent-updates.md`.
-5. Use the guides below when creating a page. There is no requirement to fill every file or heading.
+Ask an Agent to follow the [Rensheng setup guide](https://github.com/yutakobayashidev/rensheng/blob/main/docs/setup.md), using this private repository as the destination:
+
+1. Keep this repository private and connect the sources you want to use, such as Gmail, Calendar, or Beeper.
+2. Choose the output language in [AGENTS.md](AGENTS.md). The starter defaults to Japanese; setup confirms your choice before writing personal content. Existing instance settings are preserved unless you request a change.
+3. Run [rensheng-backfill](.agents/skills/rensheng-backfill/SKILL.md) to initialize `profile/`, relevant `people/` pages, accepted `goals.md` entries, and the compilation history in `recent-updates.md` from available evidence.
+
+You can also write these files directly. Add only Goals you have accepted and want tracked, and record meaningful changes in `recent-updates.md`. Use the guides below when creating a page; there is no requirement to fill every file or heading.
 
 Read [`philosophy.md`](philosophy.md) for the information boundaries and design principles.
 
