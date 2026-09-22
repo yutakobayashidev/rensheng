@@ -33,7 +33,7 @@ Set up my private Rensheng repository by following this guide:
 https://raw.githubusercontent.com/yutakobayashidev/rensheng/main/docs/setup.md
 ```
 
-The Agent will help you connect sources such as Gmail, Calendar, and Beeper, confirm the output language in your private `AGENTS.md`, and run `rensheng-backfill`. Existing connections and settings are reused. You only need to supply missing choices and complete any required sign-in or permission steps.
+The Agent will first create a private instance from `template/` or reuse your existing repository, then help you connect sources such as Gmail, Calendar, and Beeper, confirm the output language in your private `AGENTS.md`, and run `rensheng-backfill`. Existing connections and settings are reused. You only need to supply missing choices and complete any required sign-in or permission steps.
 
 Read the [setup guide](docs/setup.md) for the full workflow. Available integrations and file-writing capabilities depend on your Agent environment; setup can start with a subset of sources or produce a private draft when direct writes are unavailable.
 
@@ -47,12 +47,7 @@ Read the [setup guide](docs/setup.md) for the full workflow. Available integrati
 - `index.md`, `index-state.json`, and [`scripts/index.py`](template/scripts/README.md) — navigation and an optional Python helper for detecting changed pages or descriptions; timestamp conventions distinguish editing, evidence checks, and index reviews
 - `.agents/skills/` — reusable Skills for Agents that work with Rensheng
 
-Copy it into a new private repository:
-
-```console
-mkdir -p /path/to/private-rensheng
-cp -a template/. /path/to/private-rensheng/
-```
+Follow [Step 0 of the setup guide](docs/setup.md#0-create-or-locate-the-private-repository) for commands to clone this repository temporarily, copy only `template/` into a new private directory, and initialize independent Git history. The commands refuse existing destinations and do not carry over the public repository's `origin`. Existing private instances are reused without copying the template over them.
 
 Keep the destination private. Do not commit personal data such as profile, health, financial, or relationship information to this public repository.
 

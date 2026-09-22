@@ -1,6 +1,6 @@
 # Set up Rensheng with an Agent
 
-This guide is for an Agent helping a person initialize a private Rensheng instance. Complete three steps: connect the chosen sources, set the output language in the instance's `AGENTS.md`, and run `rensheng-backfill`.
+This guide is for an Agent helping a person initialize a private Rensheng instance. First create or locate the private repository, then connect the chosen sources, set the output language in the instance's `AGENTS.md`, and run `rensheng-backfill`.
 
 Work with the capabilities of the current host. Setup does not require OpenBrief, a Rensheng server, or a new connector service.
 
@@ -19,7 +19,7 @@ You can include your existing private repository or directory, preferred output 
 
 Read the complete guide, then carry out the setup. Reuse choices and authorization already supplied; do not ask the person to repeat them. Group missing choices into one short question where possible: destination, sources, and output language. Authentication may require a separate interaction.
 
-### Before starting: resolve the private destination
+### 0. Create or locate the private repository
 
 - Discover the current host's available file, repository, integration, and skill capabilities. A named or recommended plugin is not proof that it is installed, connected, or callable.
 - Use an existing instance when supplied. Read its applicable `AGENTS.md`, `README.md`, `philosophy.md`, and backfill skill before editing. Preserve local instructions, personal content, and unrelated changes.
@@ -27,6 +27,54 @@ Read the complete guide, then carry out the setup. Reuse choices and authorizati
 - Inspect the destination before copying. Never overlay an existing instance with the starter files. If setup is being resumed, inspect what succeeded and continue only the missing steps. Add a missing guide or skill only when needed, without replacing existing configuration.
 - Verify privacy before writing to a remote destination. If the host cannot write there, offer a private draft bundle through its supported file-delivery workflow, retaining relative paths. Make clear that it has not been applied. If no private destination or delivery route is available, resolve that before retrieving personal records.
 - Read the current instance's `rensheng-backfill/SKILL.md` and its referenced files in full. A new copy contains them under `.agents/skills/`. If a host needs explicit skill registration, use its supported mechanism. Otherwise, read and follow the files directly; do not claim native skill installation or automatic discovery without checking it. A previously installed copy must not override newer instructions in this instance.
+
+#### New local instance: clone, copy, and initialize
+
+When Bash, Git, and standard file tools are available, run the following after resolving the person's destination. Replace `/absolute/path/to/private-rensheng` with that absolute path, properly shell-quoted. Choose a private local directory outside the public development checkout and other Git worktrees. This command creates a **new** directory; it refuses any existing path, including an empty directory or a symlink. Inspect and reuse existing instances instead of rerunning the copy over them.
+
+```bash
+(
+  set -eu
+  umask 077
+  rensheng_dir='/absolute/path/to/private-rensheng'
+
+  case "$rensheng_dir" in
+    /*) ;;
+    *) printf '%s\n' 'Use an absolute destination path.' >&2; exit 1 ;;
+  esac
+  if [ -e "$rensheng_dir" ] || [ -L "$rensheng_dir" ]; then
+    printf '%s\n' 'Destination exists; inspect and reuse it without copying over it.' >&2
+    exit 1
+  fi
+
+  rensheng_tmp="$(mktemp -d)"
+  trap 'rm -rf -- "$rensheng_tmp"' EXIT
+  git clone --depth 1 --single-branch --branch main \
+    https://github.com/yutakobayashidev/rensheng.git "$rensheng_tmp/source"
+  rensheng_revision="$(git -C "$rensheng_tmp/source" rev-parse HEAD)"
+
+  mkdir -p -- "$(dirname -- "$rensheng_dir")"
+  mkdir -- "$rensheng_dir"
+  cp -R "$rensheng_tmp/source/template/." "$rensheng_dir/"
+  git -C "$rensheng_dir" init -b main
+
+  printf 'Template revision: %s\nPrivate destination: %s\n' "$rensheng_revision" "$rensheng_dir"
+  git -C "$rensheng_dir" status --short
+  git -C "$rensheng_dir" remote -v
+)
+```
+
+The temporary clone is removed on exit. Only the contents of `template/`, including `.agents/` and other dotfiles, are copied. The new `.git` belongs to the personal instance: the public repository's history and `origin` are not inherited. No commit, remote repository, or push is created by these commands.
+
+Before continuing, verify that `AGENTS.md`, `philosophy.md`, `profile/`, and `.agents/skills/rensheng-backfill/SKILL.md` exist at the destination root. The new repository should have no commits or remotes; its template files are initially untracked. Read the copied instructions and retain the printed template revision for the completion report. If a command failed after creating the destination, inspect the partial result and resume only missing work; do not delete it or blindly repeat the copy.
+
+#### Existing instance or no shell
+
+For an existing instance, read its instructions and inspect its working tree and remotes when possible. Keep its Git history, configuration, and personal files; skip the new-instance commands and proceed to source setup.
+
+If the host has repository/file tools but no shell, resolve one source commit, enumerate all files beneath `template/`, and copy their contents from that same revision into the verified private destination, removing only the leading `template/` path. Include dotfiles and nested skill references, and check for existing destination files before writing. Use supported repository tools to initialize an independent private repository only when that action is authorized and available. Do not copy the public repository's history or configure it as the personal instance's remote.
+
+If only private file delivery is available, deliver the same directory layout as a draft bundle and report Git initialization as not performed. In every route, verify successful writes before continuing; a draft bundle is not an applied repository setup.
 
 ### 1. Connect the chosen sources
 
