@@ -124,6 +124,9 @@
               nodejs_24
               pnpm_10
               python3
+              bash
+              curl
+              jq
               openssl
               pkg-config
               cairo

@@ -1,4 +1,33 @@
-# Index maintenance
+# Scripts
+
+## X following export
+
+`x-following.sh` exports an X account's complete following list through a Twitter API relay. It requires Bash 4+, curl, and jq. The collector is sequential, resumable, rejects mismatched state, and stores private working data outside the repository by default.
+
+Capture a successful browser GET `/Following` request as JSON or NDJSON. Its GraphQL query ID and feature flags are version locks, so the script reads that request directly instead of reconstructing it or using a generic request catalog.
+
+```console
+export TWITTER_RELAY_BASE_URL=http://localhost:6900
+export TWITTER_PROFILE_NAME=your-relay-profile
+export TWITTER_USER_ID=your-numeric-x-user-id
+scripts/x-following.sh --request /path/to/successful-following.ndjson
+```
+
+`--request` is required. `--profile`, `--user-id`, and `--output-dir` override their environment/default values for one run. Every request sends the selected profile as `x-profile-name`; the template contains no profile name, X user ID, or GraphQL query ID.
+
+The collector waits a uniformly random 10–30 seconds after each successful page. HTTP 429, HTTP 5xx, and transport failures use exponential backoff starting at 60 seconds. After appending each page to `users.jsonl`, it atomically advances `state.json`. A restart reuses a Bottom cursor only when the profile, user ID, and request path match. The `0|...` Bottom cursor is treated as X's terminal marker.
+
+Output defaults to `records/x-following/` at the repository root. `X_FOLLOWING_OUTPUT_DIR` or `--output-dir` selects another private location.
+
+Convert a completed export to TSV with:
+
+```console
+scripts/x-following-to-tsv.sh /path/to/users.jsonl /path/to/users.tsv
+```
+
+The TSV preserves JSONL order and includes account ID, handle, display name, bio, location, relationship and tweet counts, creation time, verification flags, protected flag, and website URL. Tabs and line breaks inside text fields are escaped by jq.
+
+## Index maintenance
 
 `index.md` is a navigation map: relative page links and short descriptions, grouped by life domain. An Agent maintains the descriptions after reading the pages. The helper only compares bytes and records an explicit navigation review; it does not infer facts or generate summaries.
 

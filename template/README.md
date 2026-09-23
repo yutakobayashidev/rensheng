@@ -14,6 +14,8 @@ You can also write these files directly. Add only Goals you have accepted and wa
 
 Read [`philosophy.md`](philosophy.md) for the information boundaries and design principles.
 
+The optional scripts include index maintenance and a resumable X following exporter. See [`scripts/README.md`](scripts/README.md) for dependencies and usage. The template contains no relay profile, X account ID, GraphQL query ID, or exported account data.
+
 ## Current context
 
 `recent-updates.md` and `goals.md` together serve as the practical current-context entrypoint. They do not replace evidence in profile, Domain, Capture, Brief, or source files.
@@ -29,6 +31,7 @@ Use [`index.md`](index.md) to find existing pages by their purpose. It complemen
 | `index.md`, `index-state.json` | Navigation descriptions and machine-written review hashes | [Index maintenance](scripts/README.md) |
 | `profile/` | Stable background, communication preferences, and working conditions | [Profile](profile/README.md) |
 | `people/` | A person's relationship with you and its current context | [People](people/README.md) |
+| `records/` | Raw personal snapshots explicitly retained by the user, separate from compiled context | [Records](records/README.md) |
 | `health/` | Current care, prescriptions, and relevant medical history | [Health](health/README.md) |
 | `money/` | Accounts, income, subscriptions, other recurring payments, and obligations | [Money](money/README.md) |
 | `career/` | Your roles, commitments, and work opportunities | [Career](career/README.md) |

@@ -43,8 +43,8 @@ Read the [setup guide](docs/setup.md) for the full workflow. Available integrati
 
 - `philosophy.md` — Rensheng's boundaries and design principles
 - `profile/`, `goals.md`, and `recent-updates.md` — the minimal Personal Context structure
-- `people/`, `health/`, `money/`, and other directories — Domain guides with file conventions and fictional examples; create personal pages only when there is information to record
-- `index.md`, `index-state.json`, and [`scripts/index.py`](template/scripts/README.md) — navigation and an optional Python helper for detecting changed pages or descriptions; timestamp conventions distinguish editing, evidence checks, and index reviews
+- `people/`, `health/`, `money/`, and other directories — Domain guides with file conventions and fictional examples; `records/` keeps explicitly retained raw snapshots separate from compiled context
+- `index.md`, `index-state.json`, and [`scripts/`](template/scripts/README.md) — navigation maintenance plus an optional resumable X following exporter and TSV converter; the template contains no account identifiers or exported data
 - `.agents/skills/` — reusable Skills for Agents that work with Rensheng
 
 Follow [Step 0 of the setup guide](docs/setup.md#0-create-or-locate-the-private-repository) for commands to clone this repository temporarily, copy only `template/` into a new private directory, and initialize independent Git history. The commands refuse existing destinations and do not carry over the public repository's `origin`. Existing private instances are reused without copying the template over them.
